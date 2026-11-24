@@ -78,13 +78,13 @@ def K(S,m):
 def N(S,ud):
  global E
  S[0][:],S[2],S[3],E=ud;S[1]=not S[1]
-def O(S,M):
+def O(S,M,h=''):
  b=S[0]
- return sorted(M,key=lambda m:-abs(Q.get((b[m[1]],m[1]),0)))
+ return sorted(M,key=lambda m:(m!=h,-abs(Q.get((b[m[1]],m[1]),0))))
 def R(S,d,a,bb):
  global nd,X
  nd+=1
- if nd>100000:X=1;return 0
+ if nd>120000:X=1;return 0
  b,tm,_,ep=S
  if d>0 or A(b,b.index('Kk'[not tm]),not tm):ms=O(S,G(S));n=0
  else:
@@ -112,7 +112,7 @@ def B(S):
  nd=X=0;bm=M[0]
  for d in range(1,9):
   a=-1e7;cm=bm
-  for m in O(S,M):
+  for m in O(S,M,bm):
    ud=K(S,m);s=-R(S,d-1,-1e7,-a);N(S,ud)
    if X:break
    if s>a:a=s;cm=m
